@@ -100,7 +100,7 @@
           data: json,
           onNodeSelected: function(event, node) {
             $('#additional-data-id').remove();
-            $('#additional-data').prepend('<p id = additional-data-id>' + "<b><u> Command Line: </b></u><br>" + node.commandLine + '<br>' + "<b><u>Time: </b></u><br>"  + node.time + '<br>' + "<b><u>Parent Process Name: <br></u></b>"  + node.parentProcessName + '</p> ');
+            $('#additional-data').prepend('<p id = additional-data-id>' + "<b><u> Command Line: </b></u><br>" + node.command_line + '<br>' + "<b><u>Time: </b></u><br>"  + node.time + '<br>' + "<b><u>Parent Process Name: <br></u></b>"  + node.parentProcessName + '</p> ');
             }
         });
 
