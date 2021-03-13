@@ -20,20 +20,9 @@ class EventCreatedProcesses(object):
         #
 
         print("Processing...")
-        #time_filter_string = ''
-        #if hours_from_last_event:
-        #    time_filter_string = "StartTime=(get-winevent -FilterHashtable @{Path='%s';id=4688}  -MaxEvents 1 |" \
-        #                         " Select-Object TimeCreated).TimeCreated.AddHours(-%d)" % (in_file, hours_from_last_event)
-        #else :
-        #    if start_time is not None:
-        #        time_filter_string = "StartTime=get-date '%s'" % (start_time)
-        #    if end_time is not None:
-        #        time_filter_string += ";EndTime=get-date '%s'" % (end_time)
-        #command = "Get-WinEvent -FilterHashtable @{Path='%s';id=4688;%s} |" \
-        #          " Select-Object TimeCreated,Message | Export-Clixml %s" % (in_file, time_filter_string, tmp_name)
-        #subprocess.check_call(["powershell",command])
 
         # If XLSX, save as CSV first
+        # NOT TESTED YET
         my_file = in_file
         self.file_type = ""
         
@@ -105,15 +94,6 @@ class EventCreatedProcesses(object):
             # filter out processCreated events only
             if self.file_type == "csv":
                 if item['Action Type'] == "ProcessCreated":
-                    #event_date = self.event_date_to_datetime(item.get('MS').get('DT').get("#text"))
-                    #xmldata = item.get('MS').get('S')['#text']
-                    #pid = int(self.get_item(xmldata, "New Process ID"), 16)
-                    #ppid = int(self.get_item(xmldata, "Creator Process ID"), 16)
-                    #parentProcessName = self.get_item(xmldata, "Creator Process Name")
-                    #processName = self.get_item(xmldata, "New Process Name")
-                    #commandLine = self.get_item(xmldata, "Process Command Line")
-
-                    #event_date = self.event_date_to_datetime(item['Event Time']) #Timestamp
                     event_date = item['Event Time'] #Timestamp
                     #xmldata = item.get('MS').get('S')['#text']
                     #pid = int(item['ProcessId'], 16) #ProcessId
@@ -130,10 +110,15 @@ class EventCreatedProcesses(object):
                     parentProcessName = item['Initiating Process Command Line'] #InitiatingProcessCommandLine
                     commandLine = item['Process Command Line'] #ProcessCommandLine
                     processName = item['Initiating Process File Name'] + " : " + commandLine #ProcessVersionInfoOriginalFileName
+                    elevation = item['Process Token Elevation']
+                    integrity = item['Process Integrity Level']
+                    domain = item['Initiating Process Account Domain']
+                    accountname = item['Initiating Process Account Name']
+                    parentSha1 = item['Initiating Process SHA1']
                     #processName = item['Initiating Process File Name'] #ProcessVersionInfoOriginalFileName
                     #commandLine = item['ProcessCommandLine'] #ProcessCommandLine
 
-                    event_items = [pid, ppid, processName, commandLine, event_date, parentProcessName]
+                    event_items = [pid, ppid, processName, commandLine, event_date, parentProcessName, elevation, integrity, domain, accountname, parentSha1]
                     #if pid != 0 and ppid != 0:
                     relevant_events_info.append(event_items)
             
@@ -159,12 +144,17 @@ class EventCreatedProcesses(object):
                     #commandLine = item['ProcessCommandLine'] #ProcessCommandLine
         return relevant_events_info
 
-    def setNodeInfo(self, node, command_line, process_name, pid, event_date, parent_process_name):
+    def setNodeInfo(self, node, command_line, process_name, pid, event_date, parent_process_name, elevation, integrity, domain, accountname, parentSha1):
         node.command_line = command_line
         node.text = process_name
         node.tags.append(str(pid))
         node.time = event_date
         node.parent_process_name = parent_process_name
+        node.elevation = elevation
+        node.integrity = integrity
+        node.domain = domain
+        node.accountname = accountname
+        node.parentSha1 = parentSha1
 
     def getCreatedProcesses(self):
         main_node = NewNode(00000)
@@ -172,7 +162,7 @@ class EventCreatedProcesses(object):
         relevant_events = self.sort_events()
         print("Num of events - " + str(len(relevant_events)))
         for event_item in relevant_events:
-            pid, ppid, new_process_name, command_line, event_date, parent_process_name = event_item[0], event_item[1], event_item[2], event_item[3], event_item[4],  event_item[5]
+            pid, ppid, new_process_name, command_line, event_date, parent_process_name, elevation, integrity, domain, accountname, parentSha1 = event_item[0], event_item[1], event_item[2], event_item[3], event_item[4],  event_item[5], event_item[6], event_item[7], event_item[8], event_item[9], event_item[10]
 
             # find if there is already a node of the parent id
             res = search.findall(main_node, filter_ = lambda node: node.name == ppid)
@@ -181,11 +171,11 @@ class EventCreatedProcesses(object):
                 parent_node.tags.append(str(ppid))
                 parent_node.text = parent_process_name
                 child_node = NewNode(pid, parent=parent_node)
-                self.setNodeInfo(child_node, command_line, new_process_name, pid, event_date, parent_process_name)
+                self.setNodeInfo(child_node, command_line, new_process_name, pid, event_date, parent_process_name, elevation, integrity, domain, accountname, parentSha1)
             else:
                 for parent_node in res:
                     child_node = NewNode(pid, parent=parent_node)
-                    self.setNodeInfo(child_node, command_line, new_process_name, pid, event_date, parent_process_name)
+                    self.setNodeInfo(child_node, command_line, new_process_name, pid, event_date, parent_process_name, elevation, integrity, domain, accountname, parentSha1)
                     if len(res) > 1:
                         child_node.unknown = True
                         child_node.text = "?" + new_process_name

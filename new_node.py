@@ -10,6 +10,11 @@ class NewNode(Node):
         self.time = ""
         self.unknown = False
         self.parent_process_name = ""
+        self.elevation = ""
+        self.integrity = ""
+        self.domain = ""
+        self.accountname = ""
+        self.parentSha1 = ""
 
     def setPID(self, pid):
         self.tags.append(str(pid))

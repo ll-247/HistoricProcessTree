@@ -1,0 +1,3734 @@
+<!-- based of project https://github.com/jonmiles/bootstrap-treeview -->
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+
+    <title>Defender Timeline to Process Treeview</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css?bootstrap=3.3.5.7" rel="stylesheet">
+	<link rel="stylesheet" type=text/css href="treeview/css/bootstrap-treeview.css">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  </head>
+  <body>
+        
+  	<div class="container">
+      <h2>Process Tree (Process Created - eventId 4688)</h2>
+      <div class="row">
+         <div class="col-sm-8">
+          <div id="treeview-searchable" class="treeview">
+            <ul class="list-group">
+              <li class="list-group-item node-treeview-searchable" data-nodeid="0" style="color:undefined;background-color:undefined;">
+                <span class="icon expand-icon glyphicon glyphicon-minus"></span>
+                <span class="icon node-icon"></span>Parent 1
+              </li>
+              <li class="list-group-item node-treeview-searchable" data-nodeid="1" style="color:undefined;background-color:undefined;">
+                <span class="indent"></span>
+                <span class="icon expand-icon glyphicon glyphicon-plus"></span>
+                <span class="icon node-icon"></span>Child 1
+              </li>
+              <li class="list-group-item node-treeview-searchable" data-nodeid="4" style="color:undefined;background-color:undefined;">
+                <span class="indent"></span>
+                <span class="icon glyphicon"></span>
+                <span class="icon node-icon"></span>Child 2
+              </li><li class="list-group-item node-treeview-searchable" data-nodeid="5" style="color:undefined;background-color:undefined;"><span class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 2</li><li class="list-group-item node-treeview-searchable" data-nodeid="6" style="color:undefined;background-color:undefined;"><span class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 3</li><li class="list-group-item node-treeview-searchable" data-nodeid="7" style="color:undefined;background-color:undefined;"><span class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 4</li><li class="list-group-item node-treeview-searchable" data-nodeid="8" style="color:undefined;background-color:undefined;"><span class="icon glyphicon"></span><span class="icon node-icon"></span>Parent 5</li></ul></div>
+        </div>
+        <div class="col-sm-4">
+          <div class="row">
+            <h2>Search</h2>
+            <div class="col-sm-6">
+            <!-- <form> -->
+              <div class="form-group">
+                <label for="input-search" class="sr-only">Search Tree:</label>
+                <input type="input" class="form-control" id="input-search" placeholder="Type to search..." value="">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" class="checkbox" id="chk-ignore-case" value="false">
+                  Ignore Case
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" class="checkbox" id="chk-exact-match" value="false">
+                  Exact Match
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" class="checkbox" id="chk-reveal-results" value="false">
+                  Reveal Results
+                </label>
+              </div>
+              <button type="button" class="btn btn-success" id="btn-search">Search</button><br>
+              <button type="button" class="btn btn-default" id="btn-clear-search">Clear</button>
+            <!-- </form> -->
+          </div>
+        </div>
+          <div class="col-sm-6">
+            <h2>Results</h2>
+            <div id="search-output"><p>0 matches found</p></div>
+          </div>
+          <div class="col-sm-7">
+            <h2>Additional Data</h2>
+            <div id="additional-data"><p></p></div>
+          </div>
+      </div>
+
+    </div>
+    <div><a href="https://secure.wikimedia.org/wikipedia/en/wiki/Mandatory_Integrity_Control">Integrity Levels</a>. Each process has an integrity level: Low, Medium, High or System. A process with a lower integrity level can’t write to an object with a higher integrity level.
+
+For processes, this means that a process with low integrity level can’t open a handle with full access to a process with medium integrity level. This is what I’ll show in this post: a process with low integrity level can’t inject a DLL in a process with medium (or higher) integrity level.</div>
+
+    <script src="bootstrap/jquery.min.js?bootstrap=3.3.5.7"></script>
+    <script src="bootstrap/js/bootstrap.min.js?bootstrap=3.3.5.7"></script>
+    <script type="text/javascript" src="treeview/js/bootstrap-treeview.js"></script>
+  	<script type="text/javascript">
+  		$(function() {
+
+        var json = [{
+  "name": 0,
+  "tags": [],
+  "text": "Event log Processes",
+  "command_line": "",
+  "time": "",
+  "unknown": false,
+  "parent_process_name": "",
+  "elevation": "",
+  "integrity": "",
+  "domain": "",
+  "accountname": "",
+  "parentSha1": "",
+  "nodes": [
+    {
+      "name": 1812,
+      "tags": [
+        "1812"
+      ],
+      "text": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 22484,
+          "tags": [
+            "22484"
+          ],
+          "text": "git.exe : git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "command_line": "git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "time": "3/11/2021 5:16:15 PM",
+          "unknown": false,
+          "parent_process_name": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "62518c6f3b9625f3cfc61ebb8f3d9f3308770164"
+        }
+      ]
+    },
+    {
+      "name": 20692,
+      "tags": [
+        "20692"
+      ],
+      "text": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 10484,
+          "tags": [
+            "10484"
+          ],
+          "text": "git.exe : git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "command_line": "git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "time": "3/11/2021 5:16:15 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39",
+          "nodes": [
+            {
+              "name": 25036,
+              "tags": [
+                "25036"
+              ],
+              "text": "?mpam-f91fe126.exe : MpSigStub.exe /stub 1.1.17800.4 /payload 1.333.185.0 /program C:\\WINDOWS\\SERVIC~1\\NETWOR~1\\AppData\\Local\\Temp\\mpam-f91fe126.exe /q WD",
+              "command_line": "MpSigStub.exe /stub 1.1.17800.4 /payload 1.333.185.0 /program C:\\WINDOWS\\SERVIC~1\\NETWOR~1\\AppData\\Local\\Temp\\mpam-f91fe126.exe /q WD",
+              "time": "3/11/2021 7:13:52 PM",
+              "unknown": true,
+              "parent_process_name": "\"mpam-f91fe126.exe\" /q WD",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "network service",
+              "parentSha1": "f3f1d496daff9fda2b1da39362e3a633dc13f483"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 6868,
+      "tags": [
+        "6868"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 8072,
+          "tags": [
+            "8072"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:16:17 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 22608,
+      "tags": [
+        "22608"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 4488,
+          "tags": [
+            "4488"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:16:17 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 13144,
+      "tags": [
+        "13144"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1846 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21748,
+          "tags": [
+            "21748"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1845 --configure-qt none --adapter-access-token d4e1ccab3c0a791bca655bdc29b107a97640ac8016cf87a8423237871101320e c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1845 --configure-qt none --adapter-access-token d4e1ccab3c0a791bca655bdc29b107a97640ac8016cf87a8423237871101320e c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:16:20 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1846 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 21356,
+      "tags": [
+        "21356"
+      ],
+      "text": "\"git.exe\" show --textconv :process_create_event.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 23504,
+          "tags": [
+            "23504"
+          ],
+          "text": "git.exe : git.exe show --textconv :process_create_event.py",
+          "command_line": "git.exe show --textconv :process_create_event.py",
+          "time": "3/11/2021 5:16:22 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :process_create_event.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 22416,
+      "tags": [
+        "22416"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\process_create_event.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 2740,
+          "tags": [
+            "2740"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\process_create_event.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\process_create_event.py",
+          "time": "3/11/2021 5:16:22 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\process_create_event.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 11496,
+      "tags": [
+        "11496"
+      ],
+      "text": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 6456,
+          "tags": [
+            "6456"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 14760\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 14760\"",
+          "time": "3/11/2021 5:16:42 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 20460,
+              "tags": [
+                "20460"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 14760",
+              "command_line": "taskkill  /F /T /PID 14760",
+              "time": "3/11/2021 5:16:42 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 14760\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 17056,
+          "tags": [
+            "17056"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 17584\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 17584\"",
+          "time": "3/11/2021 5:33:59 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 7032,
+              "tags": [
+                "7032"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 17584",
+              "command_line": "taskkill  /F /T /PID 17584",
+              "time": "3/11/2021 5:33:59 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 17584\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156",
+              "nodes": [
+                {
+                  "name": 16284,
+                  "tags": [
+                    "16284"
+                  ],
+                  "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+                  "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+                  "time": "3/11/2021 5:45:49 PM",
+                  "unknown": false,
+                  "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+                  "elevation": "Restricted",
+                  "integrity": "Medium",
+                  "domain": "ilo",
+                  "accountname": "leroy",
+                  "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": 13992,
+          "tags": [
+            "13992"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 20488\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 20488\"",
+          "time": "3/11/2021 5:36:34 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 14348,
+              "tags": [
+                "14348"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 20488",
+              "command_line": "taskkill  /F /T /PID 20488",
+              "time": "3/11/2021 5:36:34 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 20488\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 3076,
+          "tags": [
+            "3076"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 8296\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 8296\"",
+          "time": "3/11/2021 5:43:42 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 5704,
+              "tags": [
+                "5704"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 8296",
+              "command_line": "taskkill  /F /T /PID 8296",
+              "time": "3/11/2021 5:43:42 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 8296\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            },
+            {
+              "name": 23560,
+              "tags": [
+                "23560"
+              ],
+              "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1740 --configure-qt none --adapter-access-token fdd0adffdfd76bd8e814c8b650e4dfda4abb4774d684c386f92215d6066504c2 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+              "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1740 --configure-qt none --adapter-access-token fdd0adffdfd76bd8e814c8b650e4dfda4abb4774d684c386f92215d6066504c2 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+              "time": "3/11/2021 7:15:09 PM",
+              "unknown": false,
+              "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1741 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+            }
+          ]
+        },
+        {
+          "name": 6872,
+          "tags": [
+            "6872"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 10232\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 10232\"",
+          "time": "3/11/2021 5:45:48 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 20584,
+              "tags": [
+                "20584"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 10232",
+              "command_line": "taskkill  /F /T /PID 10232",
+              "time": "3/11/2021 5:45:48 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 10232\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 13564,
+          "tags": [
+            "13564"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 9364\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 9364\"",
+          "time": "3/11/2021 5:45:53 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 5348,
+              "tags": [
+                "5348"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 9364",
+              "command_line": "taskkill  /F /T /PID 9364",
+              "time": "3/11/2021 5:45:53 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 9364\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 17868,
+          "tags": [
+            "17868"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 9500\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 9500\"",
+          "time": "3/11/2021 5:46:44 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 9224,
+              "tags": [
+                "9224"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 9500",
+              "command_line": "taskkill  /F /T /PID 9500",
+              "time": "3/11/2021 5:46:45 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 9500\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 23348,
+          "tags": [
+            "23348"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 21484\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 21484\"",
+          "time": "3/11/2021 5:51:24 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 22784,
+              "tags": [
+                "22784"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 21484",
+              "command_line": "taskkill  /F /T /PID 21484",
+              "time": "3/11/2021 5:51:24 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 21484\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 20568,
+          "tags": [
+            "20568"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 10252\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 10252\"",
+          "time": "3/11/2021 5:51:29 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 4524,
+              "tags": [
+                "4524"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 10252",
+              "command_line": "taskkill  /F /T /PID 10252",
+              "time": "3/11/2021 5:51:29 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 10252\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 4920,
+          "tags": [
+            "4920"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 6436\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 6436\"",
+          "time": "3/11/2021 5:51:37 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 21956,
+              "tags": [
+                "21956"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 6436",
+              "command_line": "taskkill  /F /T /PID 6436",
+              "time": "3/11/2021 5:51:37 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 6436\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 19076,
+          "tags": [
+            "19076"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 23224\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 23224\"",
+          "time": "3/11/2021 5:52:04 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 22748,
+              "tags": [
+                "22748"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 23224",
+              "command_line": "taskkill  /F /T /PID 23224",
+              "time": "3/11/2021 5:52:05 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 23224\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 1976,
+          "tags": [
+            "1976"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 23088\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 23088\"",
+          "time": "3/11/2021 5:52:33 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 21804,
+              "tags": [
+                "21804"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 23088",
+              "command_line": "taskkill  /F /T /PID 23088",
+              "time": "3/11/2021 5:52:33 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 23088\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 9500,
+          "tags": [
+            "9500"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 23044\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 23044\"",
+          "time": "3/11/2021 5:53:47 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 8368,
+              "tags": [
+                "8368"
+              ],
+              "text": "?cmd.exe : taskkill  /F /T /PID 23044",
+              "command_line": "taskkill  /F /T /PID 23044",
+              "time": "3/11/2021 5:53:47 PM",
+              "unknown": true,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 23044\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156",
+              "nodes": [
+                {
+                  "name": 6396,
+                  "tags": [
+                    "6396"
+                  ],
+                  "text": "?csc.exe : cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                  "command_line": "cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                  "time": "3/11/2021 6:46:11 PM",
+                  "unknown": true,
+                  "parent_process_name": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\fjmgbzo1\\fjmgbzo1.cmdline\"",
+                  "elevation": "Standard",
+                  "integrity": "System",
+                  "domain": "nt authority",
+                  "accountname": "system",
+                  "parentSha1": "22a72e39d307bc628093b043ef058db1310bbf4b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": 23956,
+          "tags": [
+            "23956"
+          ],
+          "text": "Code.exe : \"git.exe\" fetch",
+          "command_line": "\"git.exe\" fetch",
+          "time": "3/11/2021 7:05:57 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2"
+        },
+        {
+          "name": 21744,
+          "tags": [
+            "21744"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 17944\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 17944\"",
+          "time": "3/11/2021 7:06:46 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 25540,
+              "tags": [
+                "25540"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 17944",
+              "command_line": "taskkill  /F /T /PID 17944",
+              "time": "3/11/2021 7:06:46 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 17944\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 3324,
+          "tags": [
+            "3324"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 13732\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 13732\"",
+          "time": "3/11/2021 7:07:12 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 24064,
+              "tags": [
+                "24064"
+              ],
+              "text": "?cmd.exe : taskkill  /F /T /PID 13732",
+              "command_line": "taskkill  /F /T /PID 13732",
+              "time": "3/11/2021 7:07:12 PM",
+              "unknown": true,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 13732\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 20100,
+          "tags": [
+            "20100"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 23504\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 23504\"",
+          "time": "3/11/2021 7:09:00 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 12272,
+              "tags": [
+                "12272"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 23504",
+              "command_line": "taskkill  /F /T /PID 23504",
+              "time": "3/11/2021 7:09:00 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 23504\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        },
+        {
+          "name": 26544,
+          "tags": [
+            "26544"
+          ],
+          "text": "Code.exe : cmd.exe /d /s /c \"taskkill /F /T /PID 18004\"",
+          "command_line": "cmd.exe /d /s /c \"taskkill /F /T /PID 18004\"",
+          "time": "3/11/2021 7:15:06 PM",
+          "unknown": false,
+          "parent_process_name": "\"Code.exe\" --inspect-port=0 \"c:\\Program Files\\Microsoft VS Code\\resources\\app\\out\\bootstrap-fork\" --type=extensionHost",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "cbed0f83273306e7b672c3e1672772c9711609a2",
+          "nodes": [
+            {
+              "name": 25112,
+              "tags": [
+                "25112"
+              ],
+              "text": "cmd.exe : taskkill  /F /T /PID 18004",
+              "command_line": "taskkill  /F /T /PID 18004",
+              "time": "3/11/2021 7:15:06 PM",
+              "unknown": false,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 18004\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 10372,
+      "tags": [
+        "10372"
+      ],
+      "text": "Explorer.EXE",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21844,
+          "tags": [
+            "21844"
+          ],
+          "text": "explorer.exe : \"cmd.exe\" ",
+          "command_line": "\"cmd.exe\" ",
+          "time": "3/11/2021 5:20:24 PM",
+          "unknown": false,
+          "parent_process_name": "Explorer.EXE",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "2c3d12b5adfcceeedc00470612ea484d5b3b81dc",
+          "nodes": [
+            {
+              "name": 22776,
+              "tags": [
+                "22776"
+              ],
+              "text": "cmd.exe : ping  google.com",
+              "command_line": "ping  google.com",
+              "time": "3/11/2021 5:20:35 PM",
+              "unknown": false,
+              "parent_process_name": "\"cmd.exe\" ",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            },
+            {
+              "name": 22384,
+              "tags": [
+                "22384"
+              ],
+              "text": "cmd.exe : powershell",
+              "command_line": "powershell",
+              "time": "3/11/2021 5:20:46 PM",
+              "unknown": false,
+              "parent_process_name": "\"cmd.exe\" ",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            },
+            {
+              "name": 4916,
+              "tags": [
+                "4916"
+              ],
+              "text": "cmd.exe : explorer",
+              "command_line": "explorer",
+              "time": "3/11/2021 5:20:55 PM",
+              "unknown": false,
+              "parent_process_name": "\"cmd.exe\" ",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 3360,
+      "tags": [
+        "3360"
+      ],
+      "text": "svchost.exe -k netsvcs -p -s Schedule",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 9500,
+          "tags": [
+            "9500"
+          ],
+          "text": "svchost.exe : \"GoogleUpdate.exe\" /ua /installsource scheduler",
+          "command_line": "\"GoogleUpdate.exe\" /ua /installsource scheduler",
+          "time": "3/11/2021 5:32:54 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61",
+          "nodes": [
+            {
+              "name": 8368,
+              "tags": [
+                "8368"
+              ],
+              "text": "?cmd.exe : taskkill  /F /T /PID 23044",
+              "command_line": "taskkill  /F /T /PID 23044",
+              "time": "3/11/2021 5:53:47 PM",
+              "unknown": true,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 23044\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156",
+              "nodes": [
+                {
+                  "name": 6396,
+                  "tags": [
+                    "6396"
+                  ],
+                  "text": "?csc.exe : cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                  "command_line": "cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                  "time": "3/11/2021 6:46:11 PM",
+                  "unknown": true,
+                  "parent_process_name": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\fjmgbzo1\\fjmgbzo1.cmdline\"",
+                  "elevation": "Standard",
+                  "integrity": "System",
+                  "domain": "nt authority",
+                  "accountname": "system",
+                  "parentSha1": "22a72e39d307bc628093b043ef058db1310bbf4b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": 15996,
+          "tags": [
+            "15996"
+          ],
+          "text": "svchost.exe : gpupdate.exe /target:computer",
+          "command_line": "gpupdate.exe /target:computer",
+          "time": "3/11/2021 5:33:54 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61",
+          "nodes": [
+            {
+              "name": 17900,
+              "tags": [
+                "17900"
+              ],
+              "text": "gpupdate.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 5:33:54 PM",
+              "unknown": false,
+              "parent_process_name": "gpupdate.exe /target:computer",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "network service",
+              "parentSha1": "5db38cafaf6f96baca19334cea684b86c6397caa"
+            }
+          ]
+        },
+        {
+          "name": 1188,
+          "tags": [
+            "1188"
+          ],
+          "text": "svchost.exe : \"AdobeARM.exe\"",
+          "command_line": "\"AdobeARM.exe\"",
+          "time": "3/11/2021 5:46:17 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 21936,
+          "tags": [
+            "21936"
+          ],
+          "text": "svchost.exe : \"MicrosoftEdgeUpdate.exe\" /ua /installsource scheduler",
+          "command_line": "\"MicrosoftEdgeUpdate.exe\" /ua /installsource scheduler",
+          "time": "3/11/2021 5:51:17 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 19252,
+          "tags": [
+            "19252"
+          ],
+          "text": "svchost.exe : gpupdate.exe /target:user",
+          "command_line": "gpupdate.exe /target:user",
+          "time": "3/11/2021 5:58:16 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61",
+          "nodes": [
+            {
+              "name": 9228,
+              "tags": [
+                "9228"
+              ],
+              "text": "gpupdate.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 5:58:16 PM",
+              "unknown": false,
+              "parent_process_name": "gpupdate.exe /target:user",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "network service",
+              "parentSha1": "5db38cafaf6f96baca19334cea684b86c6397caa"
+            }
+          ]
+        },
+        {
+          "name": 10528,
+          "tags": [
+            "10528"
+          ],
+          "text": "svchost.exe : \"GoogleUpdate.exe\" /ua /installsource scheduler",
+          "command_line": "\"GoogleUpdate.exe\" /ua /installsource scheduler",
+          "time": "3/11/2021 6:32:54 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 16528,
+          "tags": [
+            "16528"
+          ],
+          "text": "svchost.exe : usoclient.exe StartScan",
+          "command_line": "usoclient.exe StartScan",
+          "time": "3/11/2021 6:51:15 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 16276,
+          "tags": [
+            "16276"
+          ],
+          "text": "svchost.exe : Powershell.exe -NoProfile -ExecutionPolicy Bypass -file \"C:\\Program Files\\ILO\\AnyConnect.Run\\Start-AlwaysOn.ps1\" -AsTask -Verbose",
+          "command_line": "Powershell.exe -NoProfile -ExecutionPolicy Bypass -file \"C:\\Program Files\\ILO\\AnyConnect.Run\\Start-AlwaysOn.ps1\" -AsTask -Verbose",
+          "time": "3/11/2021 7:05:45 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 23760,
+          "tags": [
+            "23760"
+          ],
+          "text": "svchost.exe : wscript.exe \"C:\\Program Files\\BGInfo\\ipv4.vbs\"",
+          "command_line": "wscript.exe \"C:\\Program Files\\BGInfo\\ipv4.vbs\"",
+          "time": "3/11/2021 7:05:45 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 24944,
+          "tags": [
+            "24944"
+          ],
+          "text": "svchost.exe : wscript.exe \"C:\\Program Files\\BGInfo\\mac.vbs\"",
+          "command_line": "wscript.exe \"C:\\Program Files\\BGInfo\\mac.vbs\"",
+          "time": "3/11/2021 7:05:46 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 25048,
+          "tags": [
+            "25048"
+          ],
+          "text": "svchost.exe : \"Bginfo64.exe\" ILO2x64W10v1.bgi /timer:0 /nolicprompt /silent",
+          "command_line": "\"Bginfo64.exe\" ILO2x64W10v1.bgi /timer:0 /nolicprompt /silent",
+          "time": "3/11/2021 7:05:46 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 14756,
+          "tags": [
+            "14756"
+          ],
+          "text": "svchost.exe : wmic.exe /NAMESPACE:\\\\root\\ccm\\dcm path SMS_DesiredConfiguration CALL EvaluatePassportCertProfiles /NOINTERACTIVE",
+          "command_line": "wmic.exe /NAMESPACE:\\\\root\\ccm\\dcm path SMS_DesiredConfiguration CALL EvaluatePassportCertProfiles /NOINTERACTIVE",
+          "time": "3/11/2021 7:05:57 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k netsvcs -p -s Schedule",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61",
+          "nodes": [
+            {
+              "name": 21956,
+              "tags": [
+                "21956"
+              ],
+              "text": "WMIC.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 7:05:57 PM",
+              "unknown": false,
+              "parent_process_name": "wmic.exe /NAMESPACE:\\\\root\\ccm\\dcm path SMS_DesiredConfiguration CALL EvaluatePassportCertProfiles /NOINTERACTIVE",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "ceea1ca1d843c0ce456e347afb58286ca60af848"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 20040,
+      "tags": [
+        "20040"
+      ],
+      "text": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 20084,
+          "tags": [
+            "20084"
+          ],
+          "text": "git.exe : git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "command_line": "git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "time": "3/11/2021 5:33:26 PM",
+          "unknown": false,
+          "parent_process_name": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "62518c6f3b9625f3cfc61ebb8f3d9f3308770164"
+        }
+      ]
+    },
+    {
+      "name": 20116,
+      "tags": [
+        "20116"
+      ],
+      "text": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 2636,
+          "tags": [
+            "2636"
+          ],
+          "text": "git.exe : git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "command_line": "git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "time": "3/11/2021 5:33:27 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 17876,
+      "tags": [
+        "17876"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 10952,
+          "tags": [
+            "10952"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:33:29 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 11648,
+      "tags": [
+        "11648"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 4548,
+          "tags": [
+            "4548"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:33:29 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 16088,
+      "tags": [
+        "16088"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1900 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 4512,
+          "tags": [
+            "4512"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1899 --configure-qt none --adapter-access-token e8f0002c1e032ace8435d08cbfb083d1e4f137c91f55b7a909f546e25d7ae56e c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1899 --configure-qt none --adapter-access-token e8f0002c1e032ace8435d08cbfb083d1e4f137c91f55b7a909f546e25d7ae56e c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:33:30 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1900 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 1060,
+      "tags": [
+        "1060"
+      ],
+      "text": "services.exe",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21624,
+          "tags": [
+            "21624"
+          ],
+          "text": "services.exe : \"GoogleUpdate.exe\" /svc",
+          "command_line": "\"GoogleUpdate.exe\" /svc",
+          "time": "3/11/2021 5:33:51 PM",
+          "unknown": false,
+          "parent_process_name": "services.exe",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "1f1e06d03f056923688a943114c873e85bd903e8"
+        },
+        {
+          "name": 20456,
+          "tags": [
+            "20456"
+          ],
+          "text": "services.exe : \"MicrosoftEdgeUpdate.exe\" /svc",
+          "command_line": "\"MicrosoftEdgeUpdate.exe\" /svc",
+          "time": "3/11/2021 5:51:55 PM",
+          "unknown": false,
+          "parent_process_name": "services.exe",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "1f1e06d03f056923688a943114c873e85bd903e8"
+        },
+        {
+          "name": 25048,
+          "tags": [
+            "25048"
+          ],
+          "text": "services.exe : svchost.exe -k netsvcs -p -s wlidsvc",
+          "command_line": "svchost.exe -k netsvcs -p -s wlidsvc",
+          "time": "3/11/2021 7:05:56 PM",
+          "unknown": false,
+          "parent_process_name": "services.exe",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "1f1e06d03f056923688a943114c873e85bd903e8"
+        }
+      ]
+    },
+    {
+      "name": 16636,
+      "tags": [
+        "16636"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 22368,
+          "tags": [
+            "22368"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:33:57 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 1372,
+      "tags": [
+        "1372"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 364,
+          "tags": [
+            "364"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:33:57 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 12224,
+      "tags": [
+        "12224"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 2038 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 16736,
+          "tags": [
+            "16736"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:2037 --configure-qt none --adapter-access-token e50ec589f896670cc6ee57ac41a68e190435305e8f86b5b2af62434964416f47 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:2037 --configure-qt none --adapter-access-token e50ec589f896670cc6ee57ac41a68e190435305e8f86b5b2af62434964416f47 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:34:01 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 2038 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 21104,
+      "tags": [
+        "21104"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 18264,
+          "tags": [
+            "18264"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:34:07 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 8940,
+      "tags": [
+        "8940"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 6188,
+          "tags": [
+            "6188"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:34:07 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        },
+        {
+          "name": 19944,
+          "tags": [
+            "19944"
+          ],
+          "text": "git.exe : git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "command_line": "git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "time": "3/11/2021 5:36:27 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 17688,
+      "tags": [
+        "17688"
+      ],
+      "text": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 6220,
+          "tags": [
+            "6220"
+          ],
+          "text": "git.exe : git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "command_line": "git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "time": "3/11/2021 5:36:27 PM",
+          "unknown": false,
+          "parent_process_name": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "62518c6f3b9625f3cfc61ebb8f3d9f3308770164"
+        }
+      ]
+    },
+    {
+      "name": 8776,
+      "tags": [
+        "8776"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 7576,
+          "tags": [
+            "7576"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:36:36 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 19528,
+      "tags": [
+        "19528"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 1768,
+          "tags": [
+            "1768"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:36:36 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        },
+        {
+          "name": 20056,
+          "tags": [
+            "20056"
+          ],
+          "text": "?powershell.exe : \"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+          "command_line": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+          "time": "3/11/2021 5:44:06 PM",
+          "unknown": true,
+          "parent_process_name": "powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '96dcf6f96804de57315c7cc59553b0482df38d22ddfad7cfbbd9449ce3af362a')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' }\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "36c5d12033b2eaf251bae61c00690ffb17fddc87",
+          "nodes": [
+            {
+              "name": 6556,
+              "tags": [
+                "6556"
+              ],
+              "text": "?csc.exe : cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES87AC.tmp\" \"c:\\Windows\\Temp\\1m04vx2e\\CSCD45400AF686A4CFB8BDDF7225B7CE7B.TMP\"",
+              "command_line": "cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES87AC.tmp\" \"c:\\Windows\\Temp\\1m04vx2e\\CSCD45400AF686A4CFB8BDDF7225B7CE7B.TMP\"",
+              "time": "3/11/2021 5:44:06 PM",
+              "unknown": true,
+              "parent_process_name": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "22a72e39d307bc628093b043ef058db1310bbf4b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 5560,
+      "tags": [
+        "5560"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 2139 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 5672,
+          "tags": [
+            "5672"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:2138 --configure-qt none --adapter-access-token a8bd67c48fb564d09f20d2e1cbcce2cf4dcfa0ccf8455ccb567c2b73b237f9bd c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:2138 --configure-qt none --adapter-access-token a8bd67c48fb564d09f20d2e1cbcce2cf4dcfa0ccf8455ccb567c2b73b237f9bd c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:36:37 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 2139 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 13292,
+      "tags": [
+        "13292"
+      ],
+      "text": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 13824,
+          "tags": [
+            "13824"
+          ],
+          "text": "git.exe : git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "command_line": "git.exe for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "time": "3/11/2021 5:39:27 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/master refs/remotes/master",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 16052,
+      "tags": [
+        "16052"
+      ],
+      "text": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 23452,
+          "tags": [
+            "23452"
+          ],
+          "text": "git.exe : git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "command_line": "git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "time": "3/11/2021 5:39:28 PM",
+          "unknown": false,
+          "parent_process_name": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "62518c6f3b9625f3cfc61ebb8f3d9f3308770164"
+        }
+      ]
+    },
+    {
+      "name": 21644,
+      "tags": [
+        "21644"
+      ],
+      "text": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 20064,
+          "tags": [
+            "20064"
+          ],
+          "text": "git.exe : git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "command_line": "git-remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "time": "3/11/2021 5:42:32 PM",
+          "unknown": false,
+          "parent_process_name": "git remote-https origin https://github.com/ll-247/HistoricProcessTree.git",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "62518c6f3b9625f3cfc61ebb8f3d9f3308770164"
+        }
+      ]
+    },
+    {
+      "name": 22208,
+      "tags": [
+        "22208"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 1664,
+          "tags": [
+            "1664"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:43:44 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 8824,
+      "tags": [
+        "8824"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 22756,
+          "tags": [
+            "22756"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:43:44 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 10016,
+      "tags": [
+        "10016"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1571 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 14784,
+          "tags": [
+            "14784"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1570 --configure-qt none --adapter-access-token 8226e2f3fd67a398c72d061c2fac87d4a638d7adf8dd31b3651717c4a9362309 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1570 --configure-qt none --adapter-access-token 8226e2f3fd67a398c72d061c2fac87d4a638d7adf8dd31b3651717c4a9362309 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:43:44 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1571 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 6084,
+      "tags": [
+        "6084"
+      ],
+      "text": "\"MsSense.exe\"",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 15184,
+          "tags": [
+            "15184"
+          ],
+          "text": "MsSense.exe : \"SenseIR.exe\" \"OfflineSenseIR\" \"2992\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0ODEyfQ==\"",
+          "command_line": "\"SenseIR.exe\" \"OfflineSenseIR\" \"2992\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0ODEyfQ==\"",
+          "time": "3/11/2021 5:43:53 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2",
+          "nodes": [
+            {
+              "name": 19528,
+              "tags": [
+                "19528"
+              ],
+              "text": "SenseIR.exe : powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '96dcf6f96804de57315c7cc59553b0482df38d22ddfad7cfbbd9449ce3af362a')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' }\"",
+              "command_line": "powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '96dcf6f96804de57315c7cc59553b0482df38d22ddfad7cfbbd9449ce3af362a')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' }\"",
+              "time": "3/11/2021 5:44:03 PM",
+              "unknown": false,
+              "parent_process_name": "\"SenseIR.exe\" \"OfflineSenseIR\" \"2992\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0ODEyfQ==\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "d14f2d58d22ca1e1267ccea3b3777ecaa7c02486",
+              "nodes": [
+                {
+                  "name": 20056,
+                  "tags": [
+                    "20056"
+                  ],
+                  "text": "?powershell.exe : \"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+                  "command_line": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+                  "time": "3/11/2021 5:44:06 PM",
+                  "unknown": true,
+                  "parent_process_name": "powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '96dcf6f96804de57315c7cc59553b0482df38d22ddfad7cfbbd9449ce3af362a')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\3fa4876e-3ae5-4c59-9a4d-08a7400268a5.ps1' }\"",
+                  "elevation": "Standard",
+                  "integrity": "System",
+                  "domain": "nt authority",
+                  "accountname": "system",
+                  "parentSha1": "36c5d12033b2eaf251bae61c00690ffb17fddc87",
+                  "nodes": [
+                    {
+                      "name": 6556,
+                      "tags": [
+                        "6556"
+                      ],
+                      "text": "?csc.exe : cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES87AC.tmp\" \"c:\\Windows\\Temp\\1m04vx2e\\CSCD45400AF686A4CFB8BDDF7225B7CE7B.TMP\"",
+                      "command_line": "cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES87AC.tmp\" \"c:\\Windows\\Temp\\1m04vx2e\\CSCD45400AF686A4CFB8BDDF7225B7CE7B.TMP\"",
+                      "time": "3/11/2021 5:44:06 PM",
+                      "unknown": true,
+                      "parent_process_name": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\1m04vx2e\\1m04vx2e.cmdline\"",
+                      "elevation": "Standard",
+                      "integrity": "System",
+                      "domain": "nt authority",
+                      "accountname": "system",
+                      "parentSha1": "22a72e39d307bc628093b043ef058db1310bbf4b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": 5480,
+          "tags": [
+            "5480"
+          ],
+          "text": "MsSense.exe : \"SenseIR.exe\" \"OfflineSenseIR\" \"2844\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0MTI0fQ==\"",
+          "command_line": "\"SenseIR.exe\" \"OfflineSenseIR\" \"2844\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0MTI0fQ==\"",
+          "time": "3/11/2021 6:45:59 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2",
+          "nodes": [
+            {
+              "name": 21656,
+              "tags": [
+                "21656"
+              ],
+              "text": "SenseIR.exe : powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '4280c0720649dc005fe954717146c5ac5d8efbdaea3af05ef31417d93d564d78')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' }\"",
+              "command_line": "powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '4280c0720649dc005fe954717146c5ac5d8efbdaea3af05ef31417d93d564d78')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' }\"",
+              "time": "3/11/2021 6:46:09 PM",
+              "unknown": false,
+              "parent_process_name": "\"SenseIR.exe\" \"OfflineSenseIR\" \"2844\" \"eyJDb21tYW5kSWQiOiIiLCJEb3dubG9hZEZpbGVBY3Rpb25Db25maWciOm51bGwsIkRvd25sb2FkVHJ1c3RlZENlcnRpZmljYXRlc0NoYWlucyI6bnVsbCwiRW5hYmxlU2xlZXBTdXNwZW5zaW9uIjowLCJNYXhXYWl0Rm9yTmV3QWN0aW9uc0luTXMiOjcyMDAwMCwiT3JnSWQiOiIiLCJSdW5Qc1NjcmlwdEFjdGlvbkNvbmZpZyI6eyJlbmFibGUiOnRydWV9LCJhY2NlcHRTaW11bGF0b3JTaWduaW5nIjowLCJvZmZsaW5lSXJQaXBlSGFuZGxlIjo0MTI0fQ==\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "d14f2d58d22ca1e1267ccea3b3777ecaa7c02486",
+              "nodes": [
+                {
+                  "name": 8368,
+                  "tags": [
+                    "8368"
+                  ],
+                  "text": "powershell.exe : \"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\fjmgbzo1\\fjmgbzo1.cmdline\"",
+                  "command_line": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\fjmgbzo1\\fjmgbzo1.cmdline\"",
+                  "time": "3/11/2021 6:46:10 PM",
+                  "unknown": false,
+                  "parent_process_name": "powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -Command \"& {$OutputEncoding = [Console]::OutputEncoding =[System.Text.Encoding]::UTF8;$scriptFileStream = [System.IO.File]::Open('C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1', [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileAccess]::Read);$calculatedHash = Get-FileHash 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' -Algorithm SHA256;if (!($calculatedHash.Hash -eq '4280c0720649dc005fe954717146c5ac5d8efbdaea3af05ef31417d93d564d78')) { exit 323;}; . 'C:\\ProgramData\\Microsoft\\Windows Defender Advanced Threat Protection\\DataCollection\\7431.5638984.0.5752336.5753510-ea75110a064f8f2125d4acb497b76bd247f77d0c\\93b5bc49-87e3-4ff5-9572-438d09dbe8f3.ps1' }\"",
+                  "elevation": "Standard",
+                  "integrity": "System",
+                  "domain": "nt authority",
+                  "accountname": "system",
+                  "parentSha1": "36c5d12033b2eaf251bae61c00690ffb17fddc87",
+                  "nodes": [
+                    {
+                      "name": 6396,
+                      "tags": [
+                        "6396"
+                      ],
+                      "text": "?csc.exe : cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                      "command_line": "cvtres.exe /NOLOGO /READONLY /MACHINE:IX86 \"/OUT:C:\\WINDOWS\\TEMP\\RES5E16.tmp\" \"c:\\Windows\\Temp\\fjmgbzo1\\CSC75DF76792FC3494198BD5DCA45B0647B.TMP\"",
+                      "time": "3/11/2021 6:46:11 PM",
+                      "unknown": true,
+                      "parent_process_name": "\"csc.exe\" /noconfig /fullpaths @\"C:\\WINDOWS\\TEMP\\fjmgbzo1\\fjmgbzo1.cmdline\"",
+                      "elevation": "Standard",
+                      "integrity": "System",
+                      "domain": "nt authority",
+                      "accountname": "system",
+                      "parentSha1": "22a72e39d307bc628093b043ef058db1310bbf4b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": 2064,
+          "tags": [
+            "2064"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 6:57:25 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 17928,
+          "tags": [
+            "17928"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 6:57:45 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 12360,
+          "tags": [
+            "12360"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 6:59:30 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 18052,
+          "tags": [
+            "18052"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 6:59:58 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 16504,
+          "tags": [
+            "16504"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:01:55 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 19564,
+          "tags": [
+            "19564"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:02:08 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 22004,
+          "tags": [
+            "22004"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:03:54 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 19636,
+          "tags": [
+            "19636"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:03:57 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 22208,
+          "tags": [
+            "22208"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:04:21 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        },
+        {
+          "name": 26500,
+          "tags": [
+            "26500"
+          ],
+          "text": "MsSense.exe : \"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "command_line": "\"SenseNdr.exe\"  \"{\\\"ClientVer\\\":\\\"10.7421.18362.1316\\\",\\\"Components\\\":[{\\\"AdapterId\\\":\\\"{184C2BB0-6A58-44C3-B82C-7AE6DCE9A8E1}\\\",\\\"Category\\\":2,\\\"DomainType\\\":2,\\\"NetName\\\":\\\"ad.ilo.org\\\",\\\"PhysicalAddr\\\":\\\"00059a3c7a00\\\",\\\"PktMonId\\\":770},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":13},{\\\"AdapterId\\\":\\\"{5844B6C7-E155-44FD-A726-CC9FD2D339AE}\\\",\\\"Category\\\":1,\\\"DomainType\\\":0,\\\"NetName\\\":\\\"ll\\\",\\\"PhysicalAddr\\\":\\\"a87eea7e5bf8\\\",\\\"PktMonId\\\":32}],\\\"ConfigVer\\\":\\\"10.7431.5765636.5177545.5765553.5177545-b67e16982304f1e56e3c83008b1bc4a78389878a\\\",\\\"DissectorsEnabling\\\":4294967295,\\\"EtwSessionGuid\\\":\\\"{782655B2-0575-4AA2-82B8-7FD560AFEFF6}\\\",\\\"EtwSessionWatchdogIntervalSec\\\":300,\\\"ExecutionPeriodInSeconds\\\":4294967295,\\\"MachineId\\\":\\\"afd6c7e2844537d47a217ea45fca0c2893b57736\\\",\\\"OrgId\\\":\\\"ac6f0c4c-58e3-40b5-b9c3-7dc7cd4324bc\\\",\\\"PerformanceSamplingInSeconds\\\":1,\\\"QueueSize\\\":1000,\\\"TelemetryIntervalInSeconds\\\":600}\"",
+          "time": "3/11/2021 7:06:03 PM",
+          "unknown": false,
+          "parent_process_name": "\"MsSense.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "f1d99e15a8216cd53a39c1f3991b1163116fb5f2"
+        }
+      ]
+    },
+    {
+      "name": 21768,
+      "tags": [
+        "21768"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 1768,
+          "tags": [
+            "1768"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:45:49 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 21324,
+      "tags": [
+        "21324"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1677 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 11664,
+          "tags": [
+            "11664"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1676 --configure-qt none --adapter-access-token c5edf27393ecfa9fee3b59a7b663a4aabfb82666b5ec918b82b00377ac84e6ed c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1676 --configure-qt none --adapter-access-token c5edf27393ecfa9fee3b59a7b663a4aabfb82666b5ec918b82b00377ac84e6ed c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:45:50 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1677 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 16544,
+      "tags": [
+        "16544"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1685 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21760,
+          "tags": [
+            "21760"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1684 --configure-qt none --adapter-access-token a3b926b60ebcc10966cf07117cac919a7f0b2d80c184e915030115ae7ea10295 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1684 --configure-qt none --adapter-access-token a3b926b60ebcc10966cf07117cac919a7f0b2d80c184e915030115ae7ea10295 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:45:57 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1685 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 5860,
+      "tags": [
+        "5860"
+      ],
+      "text": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 5436,
+          "tags": [
+            "5436"
+          ],
+          "text": "git.exe : git.exe show --textconv :HistoricProcessTree.py",
+          "command_line": "git.exe show --textconv :HistoricProcessTree.py",
+          "time": "3/11/2021 5:46:45 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" show --textconv :HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 14352,
+      "tags": [
+        "14352"
+      ],
+      "text": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 17864,
+          "tags": [
+            "17864"
+          ],
+          "text": "git.exe : git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "command_line": "git.exe ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "time": "3/11/2021 5:46:45 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" ls-files --stage -- C:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 15348,
+      "tags": [
+        "15348"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3780 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 3324,
+          "tags": [
+            "3324"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3779 --configure-qt none --adapter-access-token b95891dd56f160ea37962123dbffdacd21550f602263f2897602999d17b0a46f c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3779 --configure-qt none --adapter-access-token b95891dd56f160ea37962123dbffdacd21550f602263f2897602999d17b0a46f c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:46:46 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3780 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a",
+          "nodes": [
+            {
+              "name": 24064,
+              "tags": [
+                "24064"
+              ],
+              "text": "?cmd.exe : taskkill  /F /T /PID 13732",
+              "command_line": "taskkill  /F /T /PID 13732",
+              "time": "3/11/2021 7:07:12 PM",
+              "unknown": true,
+              "parent_process_name": "cmd.exe /d /s /c \"taskkill /F /T /PID 13732\"",
+              "elevation": "Restricted",
+              "integrity": "Medium",
+              "domain": "ilo",
+              "accountname": "leroy",
+              "parentSha1": "3d7a84c1e63362d1213ccf9f25a869fe936c8156"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 23204,
+      "tags": [
+        "23204"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3945 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21660,
+          "tags": [
+            "21660"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3944 --configure-qt none --adapter-access-token 18d70fb860207a411608db3010f6b0d43f1757e2f04dec66b9aaa6f0c03faedd c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3944 --configure-qt none --adapter-access-token 18d70fb860207a411608db3010f6b0d43f1757e2f04dec66b9aaa6f0c03faedd c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:51:25 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3945 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 3780,
+      "tags": [
+        "3780"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3951 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 10232,
+          "tags": [
+            "10232"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3950 --configure-qt none --adapter-access-token 5b376cda2d096598ee9964280aa9766b7a707ac77aaef60f914594a1cb3373d9 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3950 --configure-qt none --adapter-access-token 5b376cda2d096598ee9964280aa9766b7a707ac77aaef60f914594a1cb3373d9 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:51:31 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3951 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 17396,
+      "tags": [
+        "17396"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3961 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 12748,
+          "tags": [
+            "12748"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3960 --configure-qt none --adapter-access-token 758b6137ff2d02f1dfd7f4e5813cb2d181f77153e823bea592e57090fedbd653 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3960 --configure-qt none --adapter-access-token 758b6137ff2d02f1dfd7f4e5813cb2d181f77153e823bea592e57090fedbd653 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:51:52 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3961 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 8520,
+      "tags": [
+        "8520"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3974 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 11664,
+          "tags": [
+            "11664"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3973 --configure-qt none --adapter-access-token 3f849cb1760640520fdc746d888095ea2c743409771944211009f5ed242105ed c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:3973 --configure-qt none --adapter-access-token 3f849cb1760640520fdc746d888095ea2c743409771944211009f5ed242105ed c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:52:13 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 3974 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 7552,
+      "tags": [
+        "7552"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 15396 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 22968,
+          "tags": [
+            "22968"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:15395 --configure-qt none --adapter-access-token 4f23404eb39e977277266d958b08ff9d378c72187ca122e8aca4efa0f95eefb4 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:15395 --configure-qt none --adapter-access-token 4f23404eb39e977277266d958b08ff9d378c72187ca122e8aca4efa0f95eefb4 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:52:53 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 15396 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 9976,
+      "tags": [
+        "9976"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 15493 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 3232,
+          "tags": [
+            "3232"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:15492 --configure-qt none --adapter-access-token 8ef4f1499aecb4bce267ecd4a49543320cf6e6ed2f8ea0bb315947c5e7d1697a c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:15492 --configure-qt none --adapter-access-token 8ef4f1499aecb4bce267ecd4a49543320cf6e6ed2f8ea0bb315947c5e7d1697a c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 5:54:17 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 15493 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 1432,
+      "tags": [
+        "1432"
+      ],
+      "text": "winlogon.exe",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 12864,
+          "tags": [
+            "12864"
+          ],
+          "text": "winlogon.exe : scrnsave.scr /s",
+          "command_line": "scrnsave.scr /s",
+          "time": "3/11/2021 6:09:24 PM",
+          "unknown": false,
+          "parent_process_name": "winlogon.exe",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "b0a17727f6be121271ed93e9d4a84189acd3ba04"
+        },
+        {
+          "name": 2232,
+          "tags": [
+            "2232"
+          ],
+          "text": "winlogon.exe : \"LogonUI.exe\" /flags:0x0 /state0:0xa0dd6855 /state1:0x41c64e6d",
+          "command_line": "\"LogonUI.exe\" /flags:0x0 /state0:0xa0dd6855 /state1:0x41c64e6d",
+          "time": "3/11/2021 6:09:28 PM",
+          "unknown": false,
+          "parent_process_name": "winlogon.exe",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "b0a17727f6be121271ed93e9d4a84189acd3ba04"
+        }
+      ]
+    },
+    {
+      "name": 19840,
+      "tags": [
+        "19840"
+      ],
+      "text": "\"RdrCEF.exe\" --backgroundcolor=5066061",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 12504,
+          "tags": [
+            "12504"
+          ],
+          "text": "RdrCEF.exe : \"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=9306355112969179471 --mojo-platform-channel-handle=2616 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "command_line": "\"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=9306355112969179471 --mojo-platform-channel-handle=2616 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "time": "3/11/2021 6:10:25 PM",
+          "unknown": false,
+          "parent_process_name": "\"RdrCEF.exe\" --backgroundcolor=5066061",
+          "elevation": "Restricted",
+          "integrity": "Low",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "afa8e2d1f0bbfcb74e90f84702d76b5faf1953c7"
+        },
+        {
+          "name": 10528,
+          "tags": [
+            "10528"
+          ],
+          "text": "RdrCEF.exe : \"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=16146524732059642759 --mojo-platform-channel-handle=2872 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "command_line": "\"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=16146524732059642759 --mojo-platform-channel-handle=2872 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "time": "3/11/2021 6:10:29 PM",
+          "unknown": false,
+          "parent_process_name": "\"RdrCEF.exe\" --backgroundcolor=5066061",
+          "elevation": "Restricted",
+          "integrity": "Low",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "afa8e2d1f0bbfcb74e90f84702d76b5faf1953c7"
+        },
+        {
+          "name": 19656,
+          "tags": [
+            "19656"
+          ],
+          "text": "RdrCEF.exe : \"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=4624398988243186533 --mojo-platform-channel-handle=3032 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "command_line": "\"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=4624398988243186533 --mojo-platform-channel-handle=3032 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "time": "3/11/2021 6:10:34 PM",
+          "unknown": false,
+          "parent_process_name": "\"RdrCEF.exe\" --backgroundcolor=5066061",
+          "elevation": "Restricted",
+          "integrity": "Low",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "afa8e2d1f0bbfcb74e90f84702d76b5faf1953c7"
+        },
+        {
+          "name": 7240,
+          "tags": [
+            "7240"
+          ],
+          "text": "RdrCEF.exe : \"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=18395385899371171106 --mojo-platform-channel-handle=2824 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "command_line": "\"RdrCEF.exe\" --type=utility --field-trial-handle=1888,1820792735304479838,2900206208299104935,131072 --disable-features=NetworkService,VizDisplayCompositor --lang=en-US --service-sandbox-type=utility --disable-pack-loading --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --log-severity=disable --product-version=\"ReaderServices/21.1.20145 Chrome/80.0.0.0\" --lang=en-US --log-file=\"C:\\Program Files (x86)\\Adobe\\Acrobat Reader DC\\Reader\\AcroCEF\\debug.log\" --service-request-channel-token=18395385899371171106 --mojo-platform-channel-handle=2824 --allow-no-sandbox-job --ignored=\" --type=renderer \" /prefetch:8",
+          "time": "3/11/2021 6:11:45 PM",
+          "unknown": false,
+          "parent_process_name": "\"RdrCEF.exe\" --backgroundcolor=5066061",
+          "elevation": "Restricted",
+          "integrity": "Low",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "afa8e2d1f0bbfcb74e90f84702d76b5faf1953c7"
+        }
+      ]
+    },
+    {
+      "name": 20744,
+      "tags": [
+        "20744"
+      ],
+      "text": "\"MpCmdRun.exe\" SignatureUpdate -ScheduleJob -RestrictPrivileges",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 18068,
+          "tags": [
+            "18068"
+          ],
+          "text": "MpCmdRun.exe : \"MpCmdRun.exe\" SignatureUpdate -ScheduleJob -RestrictPrivileges -Reinvoke",
+          "command_line": "\"MpCmdRun.exe\" SignatureUpdate -ScheduleJob -RestrictPrivileges -Reinvoke",
+          "time": "3/11/2021 6:13:49 PM",
+          "unknown": false,
+          "parent_process_name": "\"MpCmdRun.exe\" SignatureUpdate -ScheduleJob -RestrictPrivileges",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "cc6846f52e59a0c84a16fcadca34a8996630a0d2"
+        }
+      ]
+    },
+    {
+      "name": 1236,
+      "tags": [
+        "1236"
+      ],
+      "text": "svchost.exe -k DcomLaunch -p",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 18532,
+          "tags": [
+            "18532"
+          ],
+          "text": "svchost.exe : usocoreworker.exe -Embedding",
+          "command_line": "usocoreworker.exe -Embedding",
+          "time": "3/11/2021 6:51:15 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k DcomLaunch -p",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        },
+        {
+          "name": 21408,
+          "tags": [
+            "21408"
+          ],
+          "text": "svchost.exe : wmiprvse.exe -Embedding",
+          "command_line": "wmiprvse.exe -Embedding",
+          "time": "3/11/2021 6:56:17 PM",
+          "unknown": false,
+          "parent_process_name": "svchost.exe -k DcomLaunch -p",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "75c5a97f521f760e32a4a9639a653eed862e9c61"
+        }
+      ]
+    },
+    {
+      "name": 4196,
+      "tags": [
+        "4196"
+      ],
+      "text": "\"vpnagent.exe\"",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 3108,
+          "tags": [
+            "3108"
+          ],
+          "text": "vpnagent.exe : netsh interface ipv4 delete address name=\"Ethernet 2\" addr=\"10.216.9.162\" gateway=\"all\"",
+          "command_line": "netsh interface ipv4 delete address name=\"Ethernet 2\" addr=\"10.216.9.162\" gateway=\"all\"",
+          "time": "3/11/2021 6:56:58 PM",
+          "unknown": false,
+          "parent_process_name": "\"vpnagent.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "2f6fe50b2d27253198f09928764c51dfa0797014",
+          "nodes": [
+            {
+              "name": 14384,
+              "tags": [
+                "14384"
+              ],
+              "text": "netsh.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 6:56:58 PM",
+              "unknown": false,
+              "parent_process_name": "netsh interface ipv4 delete address name=\"Ethernet 2\" addr=\"10.216.9.162\" gateway=\"all\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "1a8bb2f6db96145903fb2f5bd5996c3142dc1dde"
+            }
+          ]
+        },
+        {
+          "name": 19488,
+          "tags": [
+            "19488"
+          ],
+          "text": "vpnagent.exe : netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:78BF:AD5B:DAAA:EF6F\"",
+          "command_line": "netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:78BF:AD5B:DAAA:EF6F\"",
+          "time": "3/11/2021 6:56:58 PM",
+          "unknown": false,
+          "parent_process_name": "\"vpnagent.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "2f6fe50b2d27253198f09928764c51dfa0797014",
+          "nodes": [
+            {
+              "name": 18044,
+              "tags": [
+                "18044"
+              ],
+              "text": "netsh.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 6:56:58 PM",
+              "unknown": false,
+              "parent_process_name": "netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:78BF:AD5B:DAAA:EF6F\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "1a8bb2f6db96145903fb2f5bd5996c3142dc1dde"
+            }
+          ]
+        },
+        {
+          "name": 3132,
+          "tags": [
+            "3132"
+          ],
+          "text": "vpnagent.exe : netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:9A7C:8369:59F0:9871\"",
+          "command_line": "netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:9A7C:8369:59F0:9871\"",
+          "time": "3/11/2021 6:56:58 PM",
+          "unknown": false,
+          "parent_process_name": "\"vpnagent.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "2f6fe50b2d27253198f09928764c51dfa0797014",
+          "nodes": [
+            {
+              "name": 21808,
+              "tags": [
+                "21808"
+              ],
+              "text": "netsh.exe : conhost.exe 0xffffffff -ForceV1",
+              "command_line": "conhost.exe 0xffffffff -ForceV1",
+              "time": "3/11/2021 6:56:58 PM",
+              "unknown": false,
+              "parent_process_name": "netsh interface ipv6 delete address interface=\"9\" address=\"FE80:0:0:0:9A7C:8369:59F0:9871\"",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "system",
+              "parentSha1": "1a8bb2f6db96145903fb2f5bd5996c3142dc1dde"
+            }
+          ]
+        },
+        {
+          "name": 17016,
+          "tags": [
+            "17016"
+          ],
+          "text": "vpnagent.exe : \"VACon64.exe\" -disable ",
+          "command_line": "\"VACon64.exe\" -disable ",
+          "time": "3/11/2021 6:56:58 PM",
+          "unknown": false,
+          "parent_process_name": "\"vpnagent.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "2f6fe50b2d27253198f09928764c51dfa0797014"
+        },
+        {
+          "name": 8904,
+          "tags": [
+            "8904"
+          ],
+          "text": "vpnagent.exe : \"VACon64.exe\" -enable ",
+          "command_line": "\"VACon64.exe\" -enable ",
+          "time": "3/11/2021 6:57:05 PM",
+          "unknown": false,
+          "parent_process_name": "\"vpnagent.exe\"",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "system",
+          "parentSha1": "2f6fe50b2d27253198f09928764c51dfa0797014"
+        }
+      ]
+    },
+    {
+      "name": 26016,
+      "tags": [
+        "26016"
+      ],
+      "text": "\"git.exe\" status -z -u",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 26080,
+          "tags": [
+            "26080"
+          ],
+          "text": "git.exe : git.exe status -z -u",
+          "command_line": "git.exe status -z -u",
+          "time": "3/11/2021 7:06:00 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" status -z -u",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 26032,
+      "tags": [
+        "26032"
+      ],
+      "text": "\"git.exe\" symbolic-ref --short HEAD",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 25972,
+          "tags": [
+            "25972"
+          ],
+          "text": "git.exe : conhost.exe 0xffffffff -ForceV1",
+          "command_line": "conhost.exe 0xffffffff -ForceV1",
+          "time": "3/11/2021 7:06:00 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" symbolic-ref --short HEAD",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 25612,
+      "tags": [
+        "25612"
+      ],
+      "text": "\"git.exe\" for-each-ref --sort -committerdate --format \"%(refname) %(objectname) %(*objectname)\"",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 2276,
+          "tags": [
+            "2276"
+          ],
+          "text": "git.exe : conhost.exe 0xffffffff -ForceV1",
+          "command_line": "conhost.exe 0xffffffff -ForceV1",
+          "time": "3/11/2021 7:06:00 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" for-each-ref --sort -committerdate --format \"%(refname) %(objectname) %(*objectname)\"",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 25604,
+      "tags": [
+        "25604"
+      ],
+      "text": "\"git.exe\" remote --verbose",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 21956,
+          "tags": [
+            "21956"
+          ],
+          "text": "git.exe : conhost.exe 0xffffffff -ForceV1",
+          "command_line": "conhost.exe 0xffffffff -ForceV1",
+          "time": "3/11/2021 7:06:00 PM",
+          "unknown": false,
+          "parent_process_name": "\"git.exe\" remote --verbose",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "eb08be0ce3da0a96de21efce8ebf64ad3bd10b39"
+        }
+      ]
+    },
+    {
+      "name": 24248,
+      "tags": [
+        "24248"
+      ],
+      "text": "\"agentexecutor.exe\"  -proxy  \"ILO\\leroy\" https://fef.amsub0502.manage.microsoft.com/TrafficGateway/TrafficRoutingService/SideCar/StatelessSideCarGatewayService",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 16040,
+          "tags": [
+            "16040"
+          ],
+          "text": "AgentExecutor.exe : conhost.exe 0xffffffff -ForceV1",
+          "command_line": "conhost.exe 0xffffffff -ForceV1",
+          "time": "3/11/2021 7:06:08 PM",
+          "unknown": false,
+          "parent_process_name": "\"agentexecutor.exe\"  -proxy  \"ILO\\leroy\" https://fef.amsub0502.manage.microsoft.com/TrafficGateway/TrafficRoutingService/SideCar/StatelessSideCarGatewayService",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "fd2245a2cf0fb89510414126736a562192eee4b3"
+        }
+      ]
+    },
+    {
+      "name": 25208,
+      "tags": [
+        "25208"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1324 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 25052,
+          "tags": [
+            "25052"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1323 --configure-qt none --adapter-access-token df5d644995c0c957ea50526ac86b9051863ce3f61d65328ab43ac63049e2f4b4 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1323 --configure-qt none --adapter-access-token df5d644995c0c957ea50526ac86b9051863ce3f61d65328ab43ac63049e2f4b4 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 7:06:54 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1324 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 26264,
+      "tags": [
+        "26264"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1412 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 24256,
+          "tags": [
+            "24256"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1411 --configure-qt none --adapter-access-token fae1632a43d7eacd3a5aa58df099a0f2f3b26e0eb58a97ca0ab227866be46be5 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1411 --configure-qt none --adapter-access-token fae1632a43d7eacd3a5aa58df099a0f2f3b26e0eb58a97ca0ab227866be46be5 c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "time": "3/11/2021 7:08:07 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1412 -- c:\\tools\\Git\\HistoricProcessTree\\HistoricProcessTree.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    },
+    {
+      "name": 25340,
+      "tags": [
+        "25340"
+      ],
+      "text": "\"MpCmdRun.exe\" SignaturesUpdateService -ScheduleJob -HttpDownload -RestrictPrivileges -Reinvoke",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 10484,
+          "tags": [
+            "10484"
+          ],
+          "text": "MpCmdRun.exe : \"mpam-f91fe126.exe\" /q WD",
+          "command_line": "\"mpam-f91fe126.exe\" /q WD",
+          "time": "3/11/2021 7:13:52 PM",
+          "unknown": false,
+          "parent_process_name": "\"MpCmdRun.exe\" SignaturesUpdateService -ScheduleJob -HttpDownload -RestrictPrivileges -Reinvoke",
+          "elevation": "Standard",
+          "integrity": "System",
+          "domain": "nt authority",
+          "accountname": "network service",
+          "parentSha1": "cc6846f52e59a0c84a16fcadca34a8996630a0d2",
+          "nodes": [
+            {
+              "name": 25036,
+              "tags": [
+                "25036"
+              ],
+              "text": "?mpam-f91fe126.exe : MpSigStub.exe /stub 1.1.17800.4 /payload 1.333.185.0 /program C:\\WINDOWS\\SERVIC~1\\NETWOR~1\\AppData\\Local\\Temp\\mpam-f91fe126.exe /q WD",
+              "command_line": "MpSigStub.exe /stub 1.1.17800.4 /payload 1.333.185.0 /program C:\\WINDOWS\\SERVIC~1\\NETWOR~1\\AppData\\Local\\Temp\\mpam-f91fe126.exe /q WD",
+              "time": "3/11/2021 7:13:52 PM",
+              "unknown": true,
+              "parent_process_name": "\"mpam-f91fe126.exe\" /q WD",
+              "elevation": "Standard",
+              "integrity": "System",
+              "domain": "nt authority",
+              "accountname": "network service",
+              "parentSha1": "f3f1d496daff9fda2b1da39362e3a633dc13f483"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": 14068,
+      "tags": [
+        "14068"
+      ],
+      "text": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1736 -- c:\\tools\\Git\\HistoricProcessTree\\process_create_event.py timeline.csv export2.html",
+      "command_line": "",
+      "time": "",
+      "unknown": false,
+      "parent_process_name": "",
+      "elevation": "",
+      "integrity": "",
+      "domain": "",
+      "accountname": "",
+      "parentSha1": "",
+      "nodes": [
+        {
+          "name": 8520,
+          "tags": [
+            "8520"
+          ],
+          "text": "python.exe : python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1735 --configure-qt none --adapter-access-token 4617936030cb643773cf5db96183128e92d5c394b7b183e4a2fe9cd2ef5a9696 c:\\tools\\Git\\HistoricProcessTree\\process_create_event.py timeline.csv export2.html",
+          "command_line": "python.exe c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy --connect 127.0.0.1:1735 --configure-qt none --adapter-access-token 4617936030cb643773cf5db96183128e92d5c394b7b183e4a2fe9cd2ef5a9696 c:\\tools\\Git\\HistoricProcessTree\\process_create_event.py timeline.csv export2.html",
+          "time": "3/11/2021 7:15:05 PM",
+          "unknown": false,
+          "parent_process_name": "\"python.exe\" c:\\Users\\leroy\\.vscode\\extensions\\ms-python.python-2021.2.636928669\\pythonFiles\\lib\\python\\debugpy\\launcher 1736 -- c:\\tools\\Git\\HistoricProcessTree\\process_create_event.py timeline.csv export2.html",
+          "elevation": "Restricted",
+          "integrity": "Medium",
+          "domain": "ilo",
+          "accountname": "leroy",
+          "parentSha1": "a93b3d6d129e3f99e32b6c2ea6a96e896c090b1a"
+        }
+      ]
+    }
+  ]
+}];
+
+        var $searchableTree = $('#treeview-searchable').treeview({
+          color: "#428bca",
+          expandIcon: 'glyphicon glyphicon-chevron-right',
+          collapseIcon: 'glyphicon glyphicon-chevron-down',
+          nodeIcon: 'glyphicon glyphicon-cog',
+          showTags: true,
+          data: json,
+          onNodeSelected: function(event, node) {
+            $('#additional-data-id').remove();
+            $('#additional-data').prepend('<p id = additional-data-id>' + "<b><u> Command Line: </b></u><br>" + node.command_line + '<br>' + "<b><u>Username: </u></b><br>"  + node.domain + "&bsol;" + node.accountname + '<br>' + "<b><u> Token Elevation: </b></u><br>" + node.elevation + '<br>' + "<b><u> Process Integrity Level: </b></u><br>" + node.integrity + '<br>' + "<b><u>Time: </b></u><br>"  + node.time + '<br>' + "<b><u>Parent Process Name: <br></u></b>"  + node.parent_process_name + '<br>' + "<b><u>Initiating Process SHA1: <br></u></b>"  + "<a href=https://www.virustotal.com/gui/file/" + node.parentSha1 + "&sol;detection>" + node.parentSha1 + "</a>" + '</p> ');
+            }
+        });
+
+        var search = function(e) {
+          var pattern = $('#input-search').val();
+          var options = {
+            ignoreCase: $('#chk-ignore-case').is(':checked'),
+            exactMatch: $('#chk-exact-match').is(':checked'),
+            revealResults: $('#chk-reveal-results').is(':checked')
+          };
+          var results = $searchableTree.treeview('search', [ pattern, options ]);
+
+          var output = '<p>' + results.length + ' matches found</p>';
+          $.each(results, function (index, result) {
+            output += '<p>- ' + result.text + '</p>';
+          });
+          $('#search-output').html(output);
+        }
+
+        $('#btn-search').on('click', search);
+        $('#input-search').on('keyup', search);
+
+        $('#btn-clear-search').on('click', function (e) {
+          $searchableTree.treeview('clearSearch');
+          $('#input-search').val('');
+          $('#search-output').html('');
+        });
+
+
+        var initSelectableTree = function() {
+          return $('#treeview-selectable').treeview({
+            data: defaultData,
+            multiSelect: $('#chk-select-multi').is(':checked'),
+            onNodeSelected: function(event, node) {
+              $('#selectable-output').prepend('<p>' + node.text + ' was selected</p>');
+            },
+            onNodeUnselected: function (event, node) {
+              $('#selectable-output').prepend('<p>' + node.text + ' was unselected</p>');
+            }
+          });
+        };
+        var $selectableTree = initSelectableTree();
+
+        var findSelectableNodes = function() {
+          return $selectableTree.treeview('search', [ $('#input-select-node').val(), { ignoreCase: false, exactMatch: false } ]);
+        };
+        var selectableNodes = findSelectableNodes();
+
+        $('#chk-select-multi:checkbox').on('change', function () {
+          console.log('multi-select change');
+          $selectableTree = initSelectableTree();
+          selectableNodes = findSelectableNodes();
+        });
+
+        // Select/unselect/toggle nodes
+        $('#input-select-node').on('keyup', function (e) {
+          selectableNodes = findSelectableNodes();
+          $('.select-node').prop('disabled', !(selectableNodes.length >= 1));
+        });
+
+        $('#btn-select-node.select-node').on('click', function (e) {
+          $selectableTree.treeview('selectNode', [ selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+        });
+
+        $('#btn-unselect-node.select-node').on('click', function (e) {
+          $selectableTree.treeview('unselectNode', [ selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+        });
+
+        $('#btn-toggle-selected.select-node').on('click', function (e) {
+          $selectableTree.treeview('toggleNodeSelected', [ selectableNodes, { silent: $('#chk-select-silent').is(':checked') }]);
+        });
+
+  		});
+  	</script>
+
+  </body>
+</html>
