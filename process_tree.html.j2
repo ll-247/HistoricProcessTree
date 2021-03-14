@@ -4,7 +4,7 @@
 <html class="no-js" lang="en">
   <head>
 
-    <title>Illusive Incident Forensic System</title>
+    <title>Defender Timeline to Process Treeview</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.min.css?bootstrap=3.3.5.7" rel="stylesheet">
@@ -19,7 +19,7 @@
   <body>
         
   	<div class="container">
-      <h2>Process Tree</h2>
+      <h2>Process Tree (Process Created - eventId 4688)</h2>
       <div class="row">
          <div class="col-sm-8">
           <div id="treeview-searchable" class="treeview">
@@ -82,6 +82,9 @@
       </div>
 
     </div>
+    <div><a href="https://secure.wikimedia.org/wikipedia/en/wiki/Mandatory_Integrity_Control">Integrity Levels</a>. Each process has an integrity level: Low, Medium, High or System. A process with a lower integrity level can’t write to an object with a higher integrity level.
+
+For processes, this means that a process with low integrity level can’t open a handle with full access to a process with medium integrity level. This is what I’ll show in this post: a process with low integrity level can’t inject a DLL in a process with medium (or higher) integrity level.</div>
 
     <script src="bootstrap/jquery.min.js?bootstrap=3.3.5.7"></script>
     <script src="bootstrap/js/bootstrap.min.js?bootstrap=3.3.5.7"></script>
@@ -100,7 +103,7 @@
           data: json,
           onNodeSelected: function(event, node) {
             $('#additional-data-id').remove();
-            $('#additional-data').prepend('<p id = additional-data-id>' + "<b><u> Command Line: </b></u><br>" + node.command_line + '<br>' + "<b><u>Time: </b></u><br>"  + node.time + '<br>' + "<b><u>Parent Process Name: <br></u></b>"  + node.parentProcessName + '</p> ');
+            $('#additional-data').prepend('<p class=".box" id = additional-data-id>' + "<b><u> Command Line: </b></u><br>" + node.command_line + '<br>' + "<b><u>Username: </u></b><br>"  + node.domain + "&bsol;" + node.accountname + '<br>' + "<b><u> Token Elevation: </b></u><br>" + node.elevation + '<br>' + "<b><u> Process Integrity Level: </b></u><br>" + node.integrity + '<br>' + "<b><u>Time: </b></u><br>"  + node.time + '<br>' + "<b><u>Parent Process Name: <br></u></b>"  + node.parent_process_name + '<br>' + "<b><u>Initiating Process SHA1: <br></u></b>"  + "<a href=https://www.virustotal.com/gui/file/" + node.parentSha1 + "&sol;detection>" + node.parentSha1 + "</a>" + '</p> ');
             }
         });
 
